@@ -21,7 +21,7 @@ const Avatar = async () => {
         {data.user.email === 'admin@gmail.com' && (
           <NavbarButton
             variant='dark'
-            href='/admin'
+            href='/dashboard'
           >
             Admin
           </NavbarButton>
