@@ -13,7 +13,7 @@ export interface Product {
   originalPrice?: number;
   image: string;
   description?: string;
-  stock: number;
+  quality: number;
   category?: string;
 }
 
@@ -88,11 +88,11 @@ export default function ProductCard({
           </div>
         )}
 
-        {/* Stock Badge */}
+        {/* quality Badge */}
         <div className="absolute top-2 right-2">
-          {product.stock > 0 ? (
+          {product.quality > 0 ? (
             <span className="bg-green-500 text-white text-xs px-2 py-1 rounded-md">
-              Còn {product.stock}
+              Còn {product.quality}
             </span>
           ) : (
             <span className="bg-red-500 text-white text-xs px-2 py-1 rounded-md">
@@ -127,11 +127,11 @@ export default function ProductCard({
           )}
         </div>
 
-        {/* Stock Display */}
+        {/* quality Display */}
         <div className="flex items-center justify-between mb-4">
           <span className="text-sm text-gray-600">Số lượng:</span>
           <span className="text-sm font-medium text-gray-900">
-            {product.stock}
+            {product.quality}
           </span>
         </div>
       </CardContent>
@@ -150,7 +150,7 @@ export default function ProductCard({
 
           <Button
             onClick={handleAddToCart}
-            disabled={product.stock === 0 || isLoading}
+            disabled={product.quality === 0 || isLoading}
             className="flex items-center gap-2"
           >
             <ShoppingCart className="w-4 h-4" />
